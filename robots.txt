@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /tutorial
+Allow: /executor
+Allow: /donate
+Allow: /credits
+Allow: /method
+Allow: /about
+
+User-agent: Twitterbot
+Allow: /tutorial
+Allow: /executor
+Allow: /donate
+Allow: /credits
+Allow: /method
+Allow: /about
+
+User-agent: nsa
+Disallow: /
