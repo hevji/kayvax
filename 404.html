@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burger — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+  <!-- Canvas / visual layers -->
+  <canvas id="canvas"></canvas>
+  <div class="blob" id="blob"></div>
+  <div class="scanlines"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="app">
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="logo">Burger</div>
+    </header>
+
+    <!-- Main area -->
+    <main class="main" style="flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; gap:28px; padding: 28px; justify-content:center; align-items:center;">
+      <!-- Coming Soon Hero -->
+      <section class="content" style="min-height: 80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:16px;">
+        <h1 style="font-size:3rem;">404 This page doesnt exist/h1>
+        <p style="color: rgba(255,255,255,0.75); max-width:500px;">
+          Burger — Its that simple.
+        </p>
+        <a href="https://bunburger.vercel.app/" class="btn" style="font-size:1.1rem; padding:14px 22px;">
+          Go Back
+        </a>
+      </section>
+    </main>
+  </div>
+
+  <!-- Status bar -->
+  <div class="statusbar">
+    <div><span class="dot"></span> System Status: Inactive</div>
+    <div>Burger Executor</div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Scripts -->
+  <script src="../remove.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
