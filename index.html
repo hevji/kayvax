@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Other Website — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+<!-- Canvas for particle field -->
+<canvas id="canvas"></canvas>
+
+<!-- Ambient blob that follows mouse -->
+<div class="blob" id="blob"></div>
+
+<!-- Scanline overlay -->
+<div class="scanlines"></div>
+
+<!-- Corner brackets -->
+<div class="corner tl"></div>
+<div class="corner tr"></div>
+<div class="corner bl"></div>
+<div class="corner br"></div>
+
+<!-- App -->
+<div class="app">
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">PROJECT.X</div>
+    <div class="actions">
+      <a href="/" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Home</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="content">
+      <h1>Coming Soon</h1>
+      <p>This space is reserved for future projects and experiments. Check back later to see what we're building.</p>
+      <a href="/" class="btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Status bar -->
+<div class="statusbar">
+  <div><span class="dot"></span>System Status: Under Construction</div>
+  <div>Project X — v0.1</div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+
+<script src="../remove.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
