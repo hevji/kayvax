@@ -26,7 +26,8 @@
 
 <!-- App -->
 <div class="app">
-  <!-- Header with Tabs -->
+
+  <!-- Header with tabs -->
   <div class="header">
     <div class="logo">Kayvax</div>
     <div class="actions">
@@ -45,8 +46,9 @@
   </div>
 
   <!-- Main content -->
-  <div class="main">
-    <!-- Sections stacked for scrolling -->
+  <div class="main" style="flex-direction: column; overflow-y: auto; scroll-behavior: smooth; padding: 20px;">
+    
+    <!-- Home -->
     <div class="content" id="home">
       <h1>Kayvax</h1>
       <p>The ultimate Roblox game enhancer.</p>
@@ -58,23 +60,22 @@
       </a>
     </div>
 
+    <!-- About -->
     <div class="content" id="about">
       <h1>About Us</h1>
       <p>Kayvax is developed by passionate gamers for Roblox players. Our mission is to provide a safe, high-performance game enhancer that enhances gameplay without compromising security.</p>
-      <a href="#download" class="btn">
-        <span>Go to Download</span>
-      </a>
+      <a href="#download" class="btn"><span>Go to Download</span></a>
     </div>
 
+    <!-- Download -->
     <div class="content" id="download">
       <h1>Download</h1>
       <p>Click the button below to download Kayvax.</p>
-      <a href="#" class="btn">
-        <span>Download Kayvax</span>
-      </a>
+      <a href="#" class="btn"><span>Download Kayvax</span></a>
       <p style="color: var(--muted); margin-top: 15px;">System Requirements: Roblox installed, Windows 10 or higher</p>
     </div>
 
+    <!-- Help -->
     <div class="content" id="help">
       <h1>Help</h1>
       <ul style="list-style:none; color: var(--muted); text-align:left; padding-left:0; margin-top:20px;">
@@ -84,10 +85,12 @@
       </ul>
     </div>
 
+    <!-- Credits -->
     <div class="content" id="credits">
       <h1>Credits</h1>
       <p>Developed by Team Kayvax. Special thanks to all contributors and the Roblox community.</p>
     </div>
+
   </div>
 </div>
 
