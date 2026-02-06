@@ -1,106 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kayvax — Roblox Game Enhancer</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="index.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kayvax — Roblox Game Enhancer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
-<!-- Canvas for particle field -->
-<canvas id="canvas"></canvas>
+  <!-- Canvas / visual layers (kept for your script) -->
+  <canvas id="canvas"></canvas>
+  <div class="blob" id="blob"></div>
+  <div class="scanlines"></div>
 
-<!-- Ambient blob -->
-<div class="blob" id="blob"></div>
+  <!-- corner decorations -->
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
 
-<!-- Scanline overlay -->
-<div class="scanlines"></div>
+  <!-- App wrapper -->
+  <div class="app">
 
-<!-- Corner brackets -->
-<div class="corner tl"></div>
-<div class="corner tr"></div>
-<div class="corner bl"></div>
-<div class="corner br"></div>
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="logo">Kayvax</div>
 
-<!-- App -->
-<div class="app">
+      <!-- primary actions / tabs - using your .btn style -->
+      <div class="actions" role="navigation" aria-label="Main">
+        <a href="#home"    class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Home</span></a>
+        <a href="#features" class="btn">Features</a>
+        <a href="#download" class="btn">Download</a>
+        <a href="#help"     class="btn">Help</a>
+        <a href="#credits"  class="btn">Credits</a>
+      </div>
+    </header>
 
-  <!-- Header with tabs -->
-  <div class="header">
-    <div class="logo">Kayvax</div>
-    <div class="actions">
-      <a href="#home" class="btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
-        </svg>
-        <span>Home</span>
-      </a>
-      <a href="#about" class="btn">About Us</a>
-      <a href="#download" class="btn">Download</a>
-      <a href="#help" class="btn">Help</a>
-      <a href="#credits" class="btn">Credits</a>
-    </div>
+    <!-- Main area: make this the only scrollable region to respect your CSS's overflow:hidden -->
+    <main class="main"
+          style="flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; gap:28px; padding: 28px;">
+      <!-- HERO -->
+      <section id="home" class="content" aria-labelledby="home-title" style="min-height: 72vh; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+        <h1 id="home-title">Kayvax</h1>
+        <p style="color: rgba(255,255,255,0.75); margin-top:12px; margin-bottom:20px; max-width:760px;">
+          Kayvax is a lightweight, high-performance Roblox game enhancer built for speed and reliability.
+          Boost FPS, tune controls, and unlock advanced utilities — designed for players who want more from their game.
+        </p>
+
+        <!-- CTA row -->
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:10px;">
+          <a href="#download" class="btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Download</span>
+          </a>
+
+          <!-- Quick status pill -->
+          <div style="display:inline-flex;align-items:center;padding:10px 16px;border-radius:999px;background:var(--panel-bg);border:1px solid var(--panel-border);font-family:Inter, sans-serif;">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--accent3);display:inline-block;margin-right:10px;"></span>
+            Active — v1.0
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES (grid-like but responsive) -->
+      <section id="features" class="content" aria-labelledby="features-title" style="padding-top:12px;">
+        <h1 id="features-title" style="margin-bottom:18px;">Core Features</h1>
+
+        <div style="display:flex;gap:18px;flex-wrap:wrap;justify-content:center;">
+          <!-- Feature card (use inline styling to match your glass look without changing CSS) -->
+          <div style="min-width:220px;max-width:320px;padding:18px;border-radius:14px;background:var(--panel-bg);border:1px solid var(--panel-border);backdrop-filter:blur(12px);">
+            <h3 style="font-family:'Syne',sans-serif;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">99% UNC</h3>
+            <p style="color:var(--muted);font-size:14px;">Optimized UNC handling — stable and low false positives.</p>
+          </div>
+
+          <div style="min-width:220px;max-width:320px;padding:18px;border-radius:14px;background:var(--panel-bg);border:1px solid var(--panel-border);backdrop-filter:blur(12px);">
+            <h3 style="font-family:'Syne',sans-serif;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Trusted</h3>
+            <p style="color:var(--muted);font-size:14px;">Built by experienced modders — community-vetted builds and changelogs.</p>
+          </div>
+
+          <div style="min-width:220px;max-width:320px;padding:18px;border-radius:14px;background:var(--panel-bg);border:1px solid var(--panel-border);backdrop-filter:blur(12px);">
+            <h3 style="font-family:'Syne',sans-serif;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Safe to Use</h3>
+            <p style="color:var(--muted);font-size:14px;">Non-invasive hooks and clear uninstall routine. Use at your own discretion.</p>
+          </div>
+
+          <div style="min-width:220px;max-width:320px;padding:18px;border-radius:14px;background:var(--panel-bg);border:1px solid var(--panel-border);backdrop-filter:blur(12px);">
+            <h3 style="font-family:'Syne',sans-serif;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">High Performance</h3>
+            <p style="color:var(--muted);font-size:14px;">Minimal overhead — designed to keep latency low and frame-rate high.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download card -->
+      <section id="download" class="content" aria-labelledby="download-title" style="display:flex;justify-content:center;align-items:flex-start;gap:18px;flex-wrap:wrap;">
+        <div style="width: 420px; padding:22px; border-radius:14px; background:var(--panel-bg); border:1px solid var(--panel-border); backdrop-filter: blur(14px);">
+          <h1 id="download-title" style="margin-bottom:6px;">Download Kayvax</h1>
+          <p style="color:var(--muted); margin-bottom:18px;">Stable build — Windows (64-bit). MD5 signatures available in the release notes.</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="#" class="btn"><span>Download .exe</span></a>
+            <a href="#" class="btn"><span>Release Notes</span></a>
+          </div>
+
+          <div style="margin-top:16px;color:var(--muted);font-size:13px;">
+            <strong>Requirements:</strong> Roblox installed, Windows 10/11 (64-bit), 4GB RAM
+          </div>
+        </div>
+
+        <!-- small quick-links / utilities column -->
+        <aside style="min-width:220px; max-width:320px; padding:18px; border-radius:12px; background:var(--panel-bg); border:1px solid var(--panel-border);">
+          <h3 style="margin-bottom:10px;">Quick Tools</h3>
+          <ul style="list-style:none;color:var(--muted);padding-left:0;line-height:1.9;">
+            <li>• Install Guide</li>
+            <li>• Uninstall</li>
+            <li>• Verify Signature</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- Help / FAQ -->
+      <section id="help" class="content" aria-labelledby="help-title" style="padding-top:8px;">
+        <h1 id="help-title" style="margin-bottom:12px;">Help & FAQ</h1>
+
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:900px;margin:0 auto;text-align:left;">
+          <details style="background:var(--panel-bg);border:1px solid var(--panel-border);padding:14px;border-radius:10px;">
+            <summary style="cursor:pointer;font-weight:600;">How do I install Kayvax?</summary>
+            <div style="color:var(--muted);margin-top:10px;">Download the exe, run as administrator, follow the on-screen steps. Backup game files if needed.</div>
+          </details>
+
+          <details style="background:var(--panel-bg);border:1px solid var(--panel-border);padding:14px;border-radius:10px;">
+            <summary style="cursor:pointer;font-weight:600;">Is it safe to use?</summary>
+            <div style="color:var(--muted);margin-top:10px;">Kayvax tries to be non-invasive. Use at your own risk and follow community guidelines.</div>
+          </details>
+
+          <details style="background:var(--panel-bg);border:1px solid var(--panel-border);padding:14px;border-radius:10px;">
+            <summary style="cursor:pointer;font-weight:600;">Support</summary>
+            <div style="color:var(--muted);margin-top:10px;">Reach support@kayvax.com for troubleshooting and requests.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Credits -->
+      <section id="credits" class="content" aria-labelledby="credits-title" style="padding-bottom:80px;">
+        <h1 id="credits-title" style="margin-bottom:12px;">Credits</h1>
+        <p style="color:var(--muted);max-width:900px;margin:0 auto;">Kayvax — Engineered by Team Kayvax. Special thanks to contributors and testers from the Roblox community.</p>
+      </section>
+
+    </main>
   </div>
 
-  <!-- Main content -->
-  <div class="main" style="flex-direction: column; overflow-y: auto; scroll-behavior: smooth; padding: 20px;">
-    
-    <!-- Home -->
-    <div class="content" id="home">
-      <h1>Kayvax</h1>
-      <p>The ultimate Roblox game enhancer.</p>
-      <a href="#download" class="btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        <span>Download Now</span>
-      </a>
-    </div>
-
-    <!-- About -->
-    <div class="content" id="about">
-      <h1>About Us</h1>
-      <p>Kayvax is developed by passionate gamers for Roblox players. Our mission is to provide a safe, high-performance game enhancer that enhances gameplay without compromising security.</p>
-      <a href="#download" class="btn"><span>Go to Download</span></a>
-    </div>
-
-    <!-- Download -->
-    <div class="content" id="download">
-      <h1>Download</h1>
-      <p>Click the button below to download Kayvax.</p>
-      <a href="#" class="btn"><span>Download Kayvax</span></a>
-      <p style="color: var(--muted); margin-top: 15px;">System Requirements: Roblox installed, Windows 10 or higher</p>
-    </div>
-
-    <!-- Help -->
-    <div class="content" id="help">
-      <h1>Help</h1>
-      <ul style="list-style:none; color: var(--muted); text-align:left; padding-left:0; margin-top:20px;">
-        <li>• How to install Kayvax?</li>
-        <li>• Is it safe to use?</li>
-        <li>• Contact us: support@kayvax.com</li>
-      </ul>
-    </div>
-
-    <!-- Credits -->
-    <div class="content" id="credits">
-      <h1>Credits</h1>
-      <p>Developed by Team Kayvax. Special thanks to all contributors and the Roblox community.</p>
-    </div>
-
+  <!-- Status bar (keeps your existing style) -->
+  <div class="statusbar">
+    <div><span class="dot"></span> System Status: Active</div>
+    <div>Kayvax — v1.0</div>
   </div>
-</div>
 
-<!-- Status bar -->
-<div class="statusbar">
-  <div><span class="dot"></span> System Status: Active</div>
-  <div>Kayvax — v1.0</div>
-</div>
+  <!-- CUSTOM CURSOR: required by your script.js -->
+  <div class="cursor" id="cursor"></div>
 
-<script src="../remove.js"></script>
-<script src="script.js"></script>
+  <!-- your other scripts (left unchanged) -->
+  <script src="../remove.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
